@@ -1,0 +1,47 @@
+﻿@model Requests_App.Models.Request
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Antud pöördumine on lahendatud?</h1>
+
+<h4>Pöördumine</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Content" class="control-label">Pöördumise sisu:</label>
+                <p>@Model.Content</p>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreatedAt" class="control-label">Lisamiskuupäev:</label>
+                <p>@Model.CreatedAt</p>
+            </div>
+            <div class="form-group">
+                <label asp-for="Deadline" class="control-label">Tähtaeg:</label>
+                <p>@Model.Deadline</p>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Resolved" />Lahendatud
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvesta" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Tagasi nimekirja</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

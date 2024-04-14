@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Requests_App.Models.Request>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lahendamata pöördumised</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-sm btn-primary">Lisa pöördumine</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr class="table-primary">
+            <th>
+                Pöördumise sisu
+            </th>
+            <th>
+                Sisestamisaeg
+            </th>
+            <th>
+                Tähtaeg
+            </th>
+            @* <th>
+                @Html.DisplayNameFor(model => model.Resolved)
+            </th> *@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var request in Model)
+        {
+            // Kontrolli, kas deadline on möödas või jäänud vähem kui üks tund
+            var isOverdue = DateTime.Now > request.Deadline;
+            var isWithinOneHour = request.Deadline.Subtract(DateTime.Now).TotalHours < 1;
+
+            <tr style="@(isOverdue || isWithinOneHour ? "color:red;" : "")">
+                @* <td>@request.id</td> *@
+                <td>@request.Content</td>
+                <td>@request.CreatedAt</td>
+                <td>@request.Deadline</td>
+                @* <td>@(request.Resolved ? "Yes" : "No")</td> *@
+                <td>
+                    <a asp-action="Edit" asp-route-id="@request.Id" class="btn btn-sm btn-success">Muuda staatust</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

@@ -1,0 +1,95 @@
+﻿@* @model Requests_App.Models.Request
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Lisa pöördumine</h1>
+
+<h4>***</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Content" class="control-label">Pöördumise tekst</label>
+                <input asp-for="Content" class="form-control" />
+                <span asp-validation-for="Content" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Deadline" class="control-label">Tähtaeg</label>
+                <input asp-for="Deadline" class="form-control" />
+                <span asp-validation-for="Deadline" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Lisa" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Tagasi nimekirja</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+} *@
+
+
+@model Requests_App.Models.Request
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Lisa pöördumine</h1>
+
+<h4>***</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Content" class="control-label">Pöördumise tekst</label>
+                <input asp-for="Content" id="content" class="form-control" />
+                <span asp-validation-for="Content" class="text-danger"></span>
+                <span id="charCount" class="text-muted">Järele jäänud tähemärgid: 300</span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Deadline" class="control-label">Tähtaeg</label>
+                <input asp-for="Deadline" class="form-control" />
+                <span asp-validation-for="Deadline" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Lisa" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Tagasi nimekirja</a>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var textarea = document.getElementById("content");
+            var charCount = document.getElementById("charCount");
+
+            textarea.addEventListener("input", function () {
+                var remainingChars = 300 - textarea.value.length;
+                charCount.textContent = "Järele jäänud tähemärgid: " + remainingChars;
+            });
+        });
+    </script>
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
