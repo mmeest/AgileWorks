@@ -1,3 +1,9 @@
+<div>
+  <p align="center">
+    <img src="https://github.com/mmeest/AgileWorks/blob/master/agile.png" width="500px">
+  </p>
+</div>
+
 # Pöördumiste rakendus
 
 * [Ülesande kirjeldus](#ülesande-kirjeldus)
