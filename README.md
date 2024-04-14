@@ -11,6 +11,8 @@
 * [Pöördumise lisamine](#pöördumise-lisamine)
 * [Lahendatuks märkimine](#lahendatuks-märkimine)
 
+---
+
 ## Ülesande kirjeldus
 
 Teostada lihtne veebirakendus, mis võimaldaks hallata kasutajatoele saadetud pöördumisi.
@@ -29,6 +31,8 @@ Nõuded:
 * Võib eeldada modernse brauseri olemasolu (HTML5 jne).
 * Andmeid ei ole vaja andmebaasi salvestada, võib hoida neid ka mälus.
 * Boonuspunktid, kui lahendust katavad ka testid.
+
+---
 
 ## Andmebaas
 
@@ -55,6 +59,8 @@ VALUES
 
 Resolved(bool) väli on loodud pöördumiste lahendatuks märkimiseks. Neljas pöördumine on juba lahendatuks märgitud, seega seda ei kuvata rakenduse vaates.
 
+---
+
 ## Ühendusstring
 
 Andmebaasi ühendusstring on talletatud 'Program.cs' failis järgnevalt:
@@ -66,6 +72,8 @@ builder.Services.AddDbContext<RequestsContext>(options =>
 });
 ```
 
+---
+
 ## Lisatud paketid
 
 Rakendusele lisatud paketid andmebaasi kasutamiseks ning kujunduseks:
@@ -74,6 +82,8 @@ Rakendusele lisatud paketid andmebaasi kasutamiseks ning kujunduseks:
 * Microsoft.EntityFrameworkCore.SqlServer
 * Microsoft.EntityFrameworkCore.Tools
 * Bootstrap
+
+---
 
 ## DbContext laiendus
 
@@ -96,6 +106,7 @@ namespace Requests_App.Models
 }
 ```
 
+---
 
 ## Pöördumiste mudel
 
@@ -122,6 +133,8 @@ namespace Requests_App.Models
 }
 
 ```
+
+---
 
 ## xUnit testid
 
@@ -152,6 +165,7 @@ Testid asuvad:
 Requests_App.UnitTests/Tests.cs
 ```
 
+---
 
 ## Rakenduse pealehekülg
 
@@ -184,11 +198,15 @@ var isWithinOneHour = request.Deadline.Subtract(DateTime.Now).TotalHours < 1;
 Kasutaja saab lisada uue pöördumise 'Lisa pöördumine' nupule klikkides.
 Tabelis on iga pöördumise rea lõpus nupp 'Muuda staatust' mille abil saab vastava pöördumise staatus muuta lahendatuks.
 
+---
+
 ## Pöördumise lisamine
 
 Selleks, et lisada uut pöördumist tuleb klikkida nupul 'Lisa pöördumine', 
 mispeale avaneb 'Requests/Create' vaade. Pöörudmise lisamiseks tuleb lisada pöördumise tekst
 ja tähtaja kuupäev/kellaaeg ning klikkida nupule 'Lisa'. Seepeale ilmub lisatud pöördumine tabelisse.
+
+---
 
 ## Lahendatuks märkimine
 
