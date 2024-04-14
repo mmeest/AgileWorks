@@ -169,6 +169,12 @@ Requests_App.UnitTests/Tests.cs
 
 ## Rakenduse pealehekülg
 
+<div>
+  <p align="center">
+    <img src="https://github.com/mmeest/AgileWorks/blob/master/index.png" width="500px">
+  </p>
+</div>
+
 Pealehekülje route' on muudetud järgnevalt:
 
 ```
@@ -202,6 +208,12 @@ Tabelis on iga pöördumise rea lõpus nupp 'Muuda staatust' mille abil saab vas
 
 ## Pöördumise lisamine
 
+<div>
+  <p align="center">
+    <img src="https://github.com/mmeest/AgileWorks/blob/master/create.png" width="500px">
+  </p>
+</div>
+
 Selleks, et lisada uut pöördumist tuleb klikkida nupul 'Lisa pöördumine', 
 mispeale avaneb 'Requests/Create' vaade. Pöörudmise lisamiseks tuleb lisada pöördumise tekst
 ja tähtaja kuupäev/kellaaeg ning klikkida nupule 'Lisa'. Seepeale ilmub lisatud pöördumine tabelisse.
@@ -209,6 +221,12 @@ ja tähtaja kuupäev/kellaaeg ning klikkida nupule 'Lisa'. Seepeale ilmub lisatu
 ---
 
 ## Lahendatuks märkimine
+
+<div>
+  <p align="center">
+    <img src="https://github.com/mmeest/AgileWorks/blob/master/edit.png" width="500px">
+  </p>
+</div>
 
 Selleks, et tabelis kuvatavat pöördumist lahendatuks märkida tuleb klikkida vastava pöördumise
 rea lõpus olevat nuppu 'Muuda staatust'. Seepeale avaneb uus vaade milles tuleb lisada linnuke ning
